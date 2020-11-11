@@ -5,6 +5,22 @@ class DB {
         this.dbName = databaseName;
         this.con = null;
     }
+
+
+    createConnection() {
+        this.con = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'root',
+            database: this.dbName
+        });
+
+        this.con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+        });
+    }
+
 }
 
 module.exports = DB;
