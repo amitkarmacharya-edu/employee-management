@@ -106,6 +106,14 @@ class DB {
         
     }
 
+    updateEmployeeRole(employe) {
+        let query = `UPDATE employee SET role_id=${employe.rID} WHERE id=${employe.eID}`;
+        this.con.query(query, function(err, result){
+            if(err) throw err;
+
+            console.log("NEW ROLE HAS BEEN ASSIGNED");
+        });
+    }
 
 }
 
