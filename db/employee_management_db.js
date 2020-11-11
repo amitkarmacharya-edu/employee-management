@@ -21,6 +21,11 @@ class DB {
         });
     }
 
+    endConnection() {
+        this.con.end();
+        console.log("DB connection Ended");
+    }
+
 }
 
 module.exports = DB;
