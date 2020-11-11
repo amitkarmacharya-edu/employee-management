@@ -1,0 +1,25 @@
+{
+  "name": "ems",
+  "version": "1.0.0",
+  "description": "Tracks ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitkarmacharya-edu/employee-management.git"
+  },
+  "author": "amit karmacharya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amitkarmacharya-edu/employee-management/issues"
+  },
+  "homepage": "https://github.com/amitkarmacharya-edu/employee-management#readme",
+  "dependencies": {
+    "ascii-art": "^2.5.0",
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
