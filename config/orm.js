@@ -52,7 +52,6 @@ class ORM {
 
             console.log("New Role Created");
         });
-        
     }
 
     updateEmployeeManager(employe) {
@@ -99,6 +98,25 @@ class ORM {
             this.con.query(query, function (err, result) {
                 if (err) {
                     reject(new Error("Error while fetching list of all " + tableName, err));
+                } else {
+                    resolve(result);
+                }
+            });
+        }); 
+    }
+
+    totalDepartmentBudjet() {
+        let query = `SELECT department.id, department.name, SUM(total_budjet.total_salary) as total_budjet 
+        FROM (SELECT role.department_id as dept_id, SUM(salary) as total_salary
+        FROM employee 
+        INNER JOIN role on employee.role_id = role.id 
+        GROUP BY ROLE.id) as total_budjet 
+        INNER JOIN department on department.id = total_budjet.dept_id
+        GROUP BY department.id;`;
+        return new Promise((resolve, reject) => {
+            this.con.query(query, function (err, result) {
+                if (err) {
+                    reject(new Error("Error while fetching all department's budjet ", err));
                 } else {
                     resolve(result);
                 }
