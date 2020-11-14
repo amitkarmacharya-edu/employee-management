@@ -23,18 +23,18 @@ The goal of this app is to architect and build a solution for managing a company
 
 ### Table of Contents
 
-- [Snapshot](#screenshots)
+- [Snapshot](#snapshot)
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [References](#references)
 - [License](#license)
-- [Author Info](#author-info)
+- [Author](#author-info)
 
 ---
 
 <br />
 
-### Snapshot
+## Snapshot
 ![App Snapshot](./assets/images/main.png)
 
 ---
