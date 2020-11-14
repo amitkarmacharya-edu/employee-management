@@ -55,12 +55,30 @@ class ORM {
         
     }
 
+    updateEmployeeManager(employe) {
+        let query = `UPDATE employee SET manager_id=${employe.mID} WHERE id=${employe.eID}`;
+        this.con.query(query, function(err, result){
+            if(err) throw err;
+
+            console.log("NEW MANAGER HAS BEEN ASSIGNED");
+        });
+    }
+
     updateEmployeeRole(employe) {
         let query = `UPDATE employee SET role_id=${employe.rID} WHERE id=${employe.eID}`;
         this.con.query(query, function(err, result){
             if(err) throw err;
 
             console.log("NEW ROLE HAS BEEN UPDATED");
+        });
+    }
+
+    deleteRecordFrom(tableName, id) {
+        let query = `DELETE FROM ${tableName} WHERE id = ${id};`;
+        this.con.query(query, function(err, result){
+            if(err) throw err;
+
+            console.log("RECORD HAS BEEN DELETED");
         });
     }
 
