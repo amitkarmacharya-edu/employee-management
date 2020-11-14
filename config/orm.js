@@ -12,7 +12,7 @@ class ORM {
     }
 
     getAllRowsFromTable(tableName) {
-        let query = `SELECT * FROM ${tableName} t INNER JOIN department d ON t.department_id = d.id`;
+        let query = `SELECT * FROM ${tableName}`;
         return new Promise((resolve, reject) => {
             this.con.query(query, function (err, result) {
                 if (err) {
