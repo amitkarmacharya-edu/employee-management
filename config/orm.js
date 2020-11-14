@@ -12,9 +12,9 @@ class ORM {
     }
 
     getAllRowsFromTable(tableName) {
-        let query = `SELECT * from ??`;
+        let query = `SELECT * FROM ${tableName} t INNER JOIN department d ON t.department_id = d.id`;
         return new Promise((resolve, reject) => {
-            this.con.query(query, [tableName], function (err, result) {
+            this.con.query(query, function (err, result) {
                 if (err) {
                     reject(new Error("Error while fetching list of all " + tableName, err));
                 } else {
