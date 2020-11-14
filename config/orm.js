@@ -28,17 +28,10 @@ class ORM {
         console.log(employee);
         let { fN, lN, rID, mID } = employee;
         let query = `INSERT INTO employee (first_name, last_Name, role_id, manager_id) VALUES('${fN}', '${lN}', '${rID}', '${mID}')`;
-        let con = this.con;
-        console.log(query);
-        return new Promise(function (resolve, reject) {
-            con.query(query, function (err, result) {
-                if (err) {
-                    reject(new Error("Error while fetching list of all employees", err));
-                } else {
-                    resolve(result);
-                    console.log("EMPLOYEE ADDED");
-                }
-            });
+        this.con.query(query, function(err, result){
+            if(err) throw err;
+            
+            console.log("New Deaprtment Created");
         });
     }
 
