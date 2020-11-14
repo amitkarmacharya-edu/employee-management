@@ -92,8 +92,6 @@ The following steps listed below will help guide you through the installation pr
 - console.table -- [console.table module](https://www.npmjs.com/package/console.table)
 
 
-[Back To The Top](#Employee_Tracker)
-
 ---
 <br />
 
