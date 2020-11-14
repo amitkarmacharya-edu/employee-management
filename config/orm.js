@@ -82,6 +82,30 @@ class ORM {
         });
     }
 
+    allEmployeeByManagers() {
+        let query = `
+        SELECT 
+            CONCAT(m.last_Name, ', ', m.first_Name) AS Manager,
+            m.id AS manager_id,
+            CONCAT(e.last_Name, ', ', e.first_Name) AS employee,
+            e.id AS employee_id
+        FROM
+            employee e
+        INNER JOIN employee m ON 
+            m.id = e.manager_id
+        ORDER BY 
+            Manager;`;
+        return new Promise((resolve, reject) => {
+            this.con.query(query, function (err, result) {
+                if (err) {
+                    reject(new Error("Error while fetching list of all " + tableName, err));
+                } else {
+                    resolve(result);
+                }
+            });
+        }); 
+    }
+
 }
 
 module.exports = ORM;
