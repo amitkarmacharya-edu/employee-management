@@ -1,7 +1,7 @@
 # Employee Management System
 ![GitHub license](https://img.shields.io/badge/license-MIT-red.svg)
 
-Employee management system is a cli app that lets you track your existing employees and adding new employees. You can view departments, roles and make necessary changes.
+Employee management system is a cli app that lets you tracks your existing employees and ability to add new employees. You can view departments, roles , employees and make necessary changes.
 
 The goal of this app is to architect and build a solution for managing a company's employees using node, inquirer, and MySQL.The app allows the user to:
 
